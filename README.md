@@ -40,6 +40,9 @@ Supported key algorithms are RSA and EC.
 - OLSICA_KEY_ALGORITHM=${OLSICA_KEY_ALGORITHM:-EC}
 - OLSICA_ECPARAM=${OLSICA_ECPARAM:-prime256v1}
 - OLSICA_RSA_BITS=${OLSICA_RSA_BITS:-4096}
+- OLSICA_KEY_USAGE=${OLSICA_KEY_USAGE:-digitalSignature}
+- OLSICA_EXTENDED_KEY_USAGE=${OLSICA_EXTENDED_KEY_USAGE:-clientAuth,serverAuth}
+
 
 ## variables for source file and directories
 - OLSICA_SOURCE_DIRECTORY=${OLSICA_SOURCE_DIRECTORY:-/certificates_ca}

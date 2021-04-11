@@ -22,6 +22,8 @@ OLSICA_CERTIFICATE_VALIDITY_DAYS=${OLSICA_CERTIFICATE_VALIDITY_DAYS:-7300}
 OLSICA_KEY_ALGORITHM=${OLSICA_KEY_ALGORITHM:-EC}
 OLSICA_ECPARAM=${OLSICA_ECPARAM:-prime256v1}
 OLSICA_RSA_BITS=${OLSICA_RSA_BITS:-4096}
+OLSICA_KEY_USAGE=${OLSICA_KEY_USAGE:-digitalSignature}
+OLSICA_EXTENDED_KEY_USAGE=${OLSICA_EXTENDED_KEY_USAGE:-clientAuth,serverAuth}
 
 # variables for source file and directories
 OLSICA_SOURCE_DIRECTORY=${OLSICA_SOURCE_DIRECTORY:-/certificates_ca}
@@ -256,8 +258,8 @@ else
        echo 'x509_extensions=ext'; \
        echo '[ext]'; \
        echo 'basicConstraints=CA:FALSE'; \
-       echo 'keyUsage=digitalSignature'; \
-       echo 'extendedKeyUsage=clientAuth, serverAuth';) $@
+       echo "keyUsage=${OLSICA_KEY_USAGE}"; \
+       echo "extendedKeyUsage=${OLSICA_EXTENDED_KEY_USAGE}";) $@
        
 fi
 
