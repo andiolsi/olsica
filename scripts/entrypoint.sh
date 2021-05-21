@@ -289,8 +289,7 @@ openssl pkcs12 -export -name "${OLSICA_CLIENT_NAME}" -in /tmp/ssl-all.pem -inkey
 if [ ! -z "${OLSICA_TARGET_CLIENT_PKCS8_FILENAME}" ]
 then
     echo "generating pkcs8"
-    openssl pkcs8 -topk8 -inform PEM -outform PEM -nocrypt -in "${OLSICA_TARGET_CLIENT_KEY_FILENAME}" -out "${OLSICA_TARGET_CLIENT_PKCS8_FILENAME}"
-    keytool -importkeystore -destkeystore "${OLSICA_TARGET_DIRECTORY}/${OLSICA_TARGET_CLIENT_KEYSTORE_FILENAME}" -srckeystore "${OLSICA_TARGET_DIRECTORY}/${OLSICA_TARGET_CLIENT_PKCS12}" -srcstoretype pkcs12 -alias "${OLSICA_CLIENT_NAME}" -srcstorepass "${OLSICA_TARGET_CLIENT_PKCS12_PASSWORD}" -deststorepass "${OLSICA_TARGET_CLIENT_KEYSTORE_PASSWORD}" -noprompt
+    openssl pkcs8 -topk8 -inform PEM -outform PEM -nocrypt -in "${OLSICA_TARGET_DIRECTORY}/${OLSICA_TARGET_CLIENT_KEY_FILENAME}" -out "${OLSICA_TARGET_DIRECTORY}/${OLSICA_TARGET_CLIENT_PKCS8_FILENAME}"    
 fi
 if [ ! -z "${OLSICA_TARGET_CLIENT_KEYSTORE_FILENAME}" ]
 then
