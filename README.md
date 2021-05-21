@@ -7,6 +7,7 @@ In that context the goal of this container is to take a CA cert and key via conf
 It can be of use to manage a "real" CA and at the very least could be a reference to some.
 
 If specified, OLSICA_TARGET_CLIENT_KEYSTORE_FILENAME and OLSICA_TARGET_CLIENT_TRUSTSTORE_FILENAME will generate Java Key/Trustores.
+If specified, OLSICA_TARGET_CLIENT_PKCS8_FILENAME will create PKCS8 version of the key.
 
 
 I haven't done excessive testing, so some stuff may not work. 
